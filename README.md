@@ -31,6 +31,10 @@
 
 <table>
 <tr>
+<td width="200" align="center" valign="middle"><a href="https://www.krill-ai.com/register?invite=KJ2VGIRVAE"><img src="https://raw.githubusercontent.com/Krill-ai-org/krill-ai-static/refs/heads/main/krill-logo/Eng/250x150.png" alt="Krill AI" width="160"></a></td>
+<td valign="middle">Thanks to Krill AI for sponsoring this project! Krill provides fast, stable official API access to GPT, Claude, Gemini, and a wide range of Chinese models, along with enterprise customization, invoicing, and dedicated 7×16-hour technical support. Its specially adapted WebSocket connection also delivers exceptionally fast time to first token. Krill offers this project an exclusive discount: register through <a href="https://www.krill-ai.com/register?invite=KJ2VGIRVAE">this link</a> and enter the coupon code “grok2api” when ordering to receive 23% off your first Codex package purchase.</td>
+</tr>
+<tr>
 <td width="200" align="center" valign="middle"><a href="https://github.com/DEEIX-AI/DEEIX-Chat"><img src="frontend/public/sponner/deeix-chat_deeix-ai.png" alt="DEEIX AI / DEEIX Chat" width="160"></a></td>
 <td valign="middle">DEEIX-Chat is an open-source, self-hostable AI Chat platform for individuals, teams, and enterprises that need stable, long-term, unified access to multiple models. It brings models, conversations, files, tool calling, and administration together in one deployable and extensible system. Click <a href="https://github.com/DEEIX-AI/DEEIX-Chat">here</a> to start deploying.</td>
 </tr>
@@ -362,6 +366,12 @@ socks5h://Default.{account}:RESIN_PROXY_TOKEN@resin:2260
 At runtime, the placeholder is replaced with a stable anonymous account identity. Linked Web, Build, and Console accounts can reuse the same identity; unlinked accounts continue to use their own fallback identities. Token refreshes do not rotate a persisted identity.
 
 The egress layer retries only connection errors that clearly occur before a request is submitted. Submitted generation requests, authentication failures, exhausted quotas, and upstream rate limits are never automatically replayed at the egress layer.
+
+### Proxy operations and account allocation
+
+The admin console can import HTTP/SOCKS proxy lists from encrypted HTTP(S) subscription sources or pasted plain/Base64 text. It records proxy probe status, latency, and exit IP without exposing proxy credentials or subscription URLs.
+
+Accounts can be explicitly bound in batches to one enabled proxy node. Automatic allocation uses only recently healthy nodes, respects each node's optional account capacity, and balances automatic assignments when sufficient capacity exists. Manual bindings are never moved by automatic balancing.
 
 ## Security and production guidance
 
